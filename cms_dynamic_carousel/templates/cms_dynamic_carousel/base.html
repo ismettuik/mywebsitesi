@@ -1,0 +1,72 @@
+{% load cms_tags menu_tags sekizai_tags static   %}
+<!doctype html>
+<html>
+    <head>
+        
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         
+        <!-- Alternatif
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        
+       
+       <script src="{% static "aldryn_bootstrap3/js/bootstrap.min.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/base.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/bootstrap-iconpicker.min.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/ckeditor.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/dropzone.init.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/dropzone.min.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/jquery.min.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/iconset/iconset-fontawesome-4.2.0.min.js" %}" ></script>
+       <script src="{% static "aldryn_bootstrap3/js/iconset/iconset-glyphicon.min.js" %}" ></script>
+       <!-- Alternatif
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+      
+
+         
+        <link rel="stylesheet"  href="{% static "aldryn_bootstrap3/css/bootstrap.min.css" %}" >
+        <link rel="stylesheet"  href="{% static "aldryn_bootstrap3/css/base.css" %}" >
+        <link rel="stylesheet"  href="{% static "aldryn_bootstrap3/css/bootstrap-iconpicker.min.css" %}" >
+        <link rel="stylesheet"  href="{% static "aldryn_bootstrap3/css/font-awesome.min.css" %}" >
+        <link rel="stylesheet"  href="{% static "aldryn_bootstrap3/css/bootstrap.min.css" %}" >
+        <!-- Alternatif
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   iptal<script src="//code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>-->
+
+      
+        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style type="text/css">
+            .nav {
+                padding-left: 0;
+            }
+            .nav li {
+                display: inline;
+                list-style-type: none;
+                padding-right: 20px;
+            }
+            .container {
+                width: 940px;
+                margin: 0 auto
+            }
+            .content {
+                float: left;
+                width: 80%;
+            }
+            .sidebar {
+                float: left;
+                width: 20%;
+            }
+        </style>
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        <div class="container">
+            <ul class="nav">
+                {% show_menu 0 100 100 100 %}
+            </ul>
+            {% block content %}{% endblock content %}
+        </div>
+        {% render_block "js" %}
+    </body>
+</html>

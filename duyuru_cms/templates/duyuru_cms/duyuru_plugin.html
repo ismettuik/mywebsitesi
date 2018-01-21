@@ -1,0 +1,24 @@
+
+{% if instance.duyurular and instance.duyurular|length > 0 %}
+    <h4 style="color : red;" >DUYURULAR</h4>
+    <div>
+        {% for duyuru in instance.duyurular %}  
+            <h4 style="color : blue;" >{{ duyuru.eklenme_tarihi}}</h4>
+            <h4>{{ duyuru.baslik }}</h4> 
+                {{ duyuru.icerik }}  
+            <br><br>
+        {% endfor %}
+        
+    </div>
+    {% else %}
+    <h4 style="color : red;" >DUYURU</h4>
+    <div> 
+        <h4 style="color : blue;" >{{ instance.duyuru.eklenme_tarihi}}</h4>
+        <h4>{{ instance.duyuru.baslik }}</h4>
+            {{ instance.duyuru.icerik }}
+    </div>
+
+    
+{% endif %}
+
+

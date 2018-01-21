@@ -1,0 +1,40 @@
+{% extends 'dynamic_carousel/base.html' %}
+
+{% block content %}
+    
+      <form name = "pictureForm" enctype = "multipart/form-data" 
+         action = "{% url "dynamic_carousel.views.savePicture" %}" method = "POST" >{% csrf_token %}
+         
+         <div style = "max-width:470px;">
+            <center>  
+               <input type = "text" style = "margin-left:20%;" 
+               placeholder = "Code" name = "code" />
+            </center>
+         </div>
+			
+         <br>
+         
+         <div style = "max-width:470px;">
+            <center> 
+               <input type = "file" style = "margin-left:20%;" 
+                  placeholder = "Picture" name = "picture" />
+            </center>
+         </div>
+			
+         <br>
+         
+         <div style = "max-width:470px;"
+            <center> 
+            
+               <button style = "border:0px;background-color:#4285F4; margin-top:8%; 
+                  height:35px; width:80%; margin-left:19%;" type = "submit" value = "Save" >
+                  <strong>Save</strong>
+               </button>
+               
+            </center>
+         </div>
+         
+      </form>
+
+
+{% endblock %}
